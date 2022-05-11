@@ -237,6 +237,7 @@ MonoBehaviour:
   BestScoreText: {fileID: 0}
   ScoreText: {fileID: 0}
   GameOverText: {fileID: 0}
+  mainInputField: {fileID: 483314330}
 --- !u!4 &459980508
 Transform:
   m_ObjectHideFlags: 0

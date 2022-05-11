@@ -26,35 +26,8 @@ public class MenuUIHandler : MonoBehaviour
 #endif 
     }
 
-    public InputField mainInputField;
-
-    public void Start()
-    {
-        mainInputField.text = "Enter Text Here...";
-
-        //Adds a listener to the main input field and invokes a method when the value changes.
-        mainInputField.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
-
-        //Adds a listener that invokes the "LockInput" method when the player finishes editing the main input field.
-        //Passes the main input field into the method when "LockInput" is invoked
-        mainInputField.onEndEdit.AddListener(delegate { LockInput(mainInputField); });
-    }
-    // Invoked when the value of the text field changes.
-    public void ValueChangeCheck()
-    {
-        Debug.Log("Value Changed");
-    }
-
-    // Checks if there is anything entered into the input field.
     public void LockInput(InputField input)
     {
-        if (input.text.Length > 0)
-        {
-            Debug.Log("Text has been entered");
-        }
-        else if (input.text.Length == 0)
-        {
-            Debug.Log("Main Input Empty");
-        }
+        MainManager.Instance.BestScoreText = Text;
     }
 }
