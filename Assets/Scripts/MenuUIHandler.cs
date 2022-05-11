@@ -25,9 +25,4 @@ public class MenuUIHandler : MonoBehaviour
         Application.Quit(); // original code to quit Unity player
 #endif 
     }
-
-    public void LockInput(InputField input)
-    {
-        MainManager.Instance.BestScoreText = Text;
-    }
 }

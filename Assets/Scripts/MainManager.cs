@@ -12,7 +12,6 @@ public class MainManager : MonoBehaviour
     public Text BestScoreText;
     public Text ScoreText;
     public GameObject GameOverText;
-    public static MainManager Instance;
     private bool m_Started = false;
     private int m_Points;
     private bool m_GameOver = false;
@@ -72,19 +71,5 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
-    }
-
-    private void Awake()
-    {
-        // start of new code
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        // end of new code
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 }
